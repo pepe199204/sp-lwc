@@ -1,0 +1,16 @@
+<template>
+
+   <div class="slds-tabs_card">
+      
+      <lightning-avatar class="slds-avatar_circle slds-m-right_small"
+         src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg"
+         alt="User avatar"></lightning-avatar>
+      <lightning-record-form
+      record-id={recordId}
+      object-api-name="Person__c"
+      fields={fields}
+      >
+      </lightning-record-form>
+      <button class="forceActionLink" onclick={callPerson}>click me</button>
+   </div>
+</template>

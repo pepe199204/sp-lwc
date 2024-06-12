@@ -1,0 +1,22 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+   <!--An aura:attribute is what we use to store data within an Aura component-->
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="Account" type="Account" />
+    
+    <!--Lightning Data Service is available through force:recordData and several base components. To return raw record data-->
+    <force:recordData aura:id="accountRecord"
+                      recordId="{!v.recordId}"
+                      targetFields="{!v.Account}"
+                      layoutType="FULL"
+                      />
+    <!--lightning:card is a base component for displaying data-->
+    <lightning:card iconName="standard:contact" title="Type of Account">
+        <aura:if isTrue="{!v.Account.Type == 'Customer'}">
+            <p class="slds-p-horizontal_small">Cuenta suavesonga</p>
+    	<aura:set attribute="else">
+          <p class="slds-p-horizontal_small">Cuenta del berriondo</p>
+        </aura:set>
+      </aura:if>
+    </lightning:card>	
+</aura:component>
